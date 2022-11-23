@@ -8,7 +8,7 @@ interface User {
    * - 'user'
    * - 'super-admin'
    */
-  role: string;
+  role: "admin" | "user" | "super-admin";
 }
 
 export const defaultUser: User = {
@@ -18,3 +18,7 @@ export const defaultUser: User = {
   // @ts-expect-error
   role: "I_SHOULD_NOT_BE_ALLOWED",
 };
+
+/**
+ * With union type for role, role only have 3 value 'admin', 'user' and 'super-admin'
+ */

@@ -1,6 +1,6 @@
 import { expect, it } from "vitest";
 
-export const getName = (first: string, last: string) => {
+export const getName = (first: string, last?: string) => {
   if (last) {
     return `${first} ${last}`;
   }
@@ -18,3 +18,10 @@ it("Should work with the first and last name", () => {
 
   expect(name).toEqual("Matt Pocock");
 });
+
+/**
+ * In Typescript function, we can declare a function with optional params,
+ * it mean we can pass argument or not when call function.
+ *
+ * Note: optional param must be after required param.
+ */

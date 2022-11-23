@@ -1,7 +1,7 @@
 import { expect, it } from "vitest";
 
 const createCache = () => {
-  const cache = {};
+  const cache: Record<string, string> = {};
 
   const add = (id: string, value: string) => {
     cache[id] = value;
@@ -34,3 +34,12 @@ it("Should remove values from the cache", () => {
 
   expect(cache.cache["123"]).toEqual(undefined);
 });
+
+/**
+ * Typescript provide Record<T, V> type, it like object.
+ * We can pass type of key and value to generic arguments
+ *
+ * Typescript also have Map, it looks very similar.
+ * But, I find some difference between Record and Map in Google.
+ * https://stackoverflow.com/questions/18541940/map-vs-object-in-javascript
+ */

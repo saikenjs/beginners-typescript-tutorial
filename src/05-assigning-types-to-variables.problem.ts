@@ -11,7 +11,12 @@ interface User {
  * How do we ensure that defaultUser is of type User
  * at THIS LINE - not further down in the code?
  */
-const defaultUser = {};
+const defaultUser: User = {
+  id: 1,
+  firstName: "Luc",
+  lastName: "Le",
+  isAdmin: true,
+};
 
 const getUserId = (user: User) => {
   return user.id;
@@ -20,3 +25,7 @@ const getUserId = (user: User) => {
 it("Should get the user id", () => {
   expect(getUserId(defaultUser)).toEqual(1);
 });
+
+/**
+ * I assign defaultUser with type User, and add required properties for this variable.
+ */

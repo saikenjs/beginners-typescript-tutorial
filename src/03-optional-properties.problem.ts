@@ -1,6 +1,6 @@
 import { expect, it } from "vitest";
 
-export const getName = (params: { first: string; last: string }) => {
+export const getName = (params: { first: string; last?: string }) => {
   if (params.last) {
     return `${params.first} ${params.last}`;
   }
@@ -23,3 +23,7 @@ it("Should work with the first and last name", () => {
 
   expect(name).toEqual("Matt Pocock");
 });
+
+/**
+ * Optional properties of type of params
+ */

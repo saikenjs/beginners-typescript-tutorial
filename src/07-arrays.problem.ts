@@ -3,7 +3,7 @@ interface User {
   firstName: string;
   lastName: string;
   role: "admin" | "user" | "super-admin";
-  posts: Post;
+  posts: Array<Post>;
 }
 
 interface Post {
@@ -27,3 +27,15 @@ export const defaultUser: User = {
     },
   ],
 };
+
+/**
+ * In typescript, we can declare array by 2 ways:
+ * - Generic syntax: Array<number>
+ * - Shorthand syntax: number[];
+ * There are no difference at all.
+ *
+ * When use with `readonly` keyword, generic syntax will be errors: Ex: readonly Array<number> -> error
+ * The following is okay: ReadonlyArray<number>.
+ *
+ * For me, I prefer using generic syntax. Although it looks a bit long, but it modern and easy to read.
+ */
